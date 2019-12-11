@@ -2,9 +2,8 @@ import {createDrawerNavigator} from "react-navigation-drawer";
 import React from "react";
 import Icon from '@expo/vector-icons/Ionicons';
 import ProfileStackNavigator from "./ProfileStackNavigator";
-import SettingsStackNavigator from "./SettingsStackNavigator";
-import CategoriesStackNavigator from "./CategoriesStackNavigator";
 import DrawerNavigation from "../components/DrawerNavigation";
+import EventStackNavigator from "./EventsStackNavigator";
 
 const AppDrawerNavigator = createDrawerNavigator({
     Profile: {
@@ -16,21 +15,12 @@ const AppDrawerNavigator = createDrawerNavigator({
             )
         })
     },
-    Settings: {
-        screen: SettingsStackNavigator,
+    Events: {
+        screen: EventStackNavigator,
         navigationOptions: ({navigation}) => ({
-            title: 'Setting',
+            title: 'Events',
             drawerIcon: ({tintColor}) => (
-                <Icon name="md-settings" style={{fontSize: 28}} color={tintColor}/>
-            )
-        })
-    },
-    Categories: {
-        screen: CategoriesStackNavigator,
-        navigationOptions: ({navigation}) => ({
-            title: 'Categories',
-            drawerIcon: ({tintColor}) => (
-                <Icon name="md-apps" style={{fontSize: 28}} color={tintColor}/>
+                <Icon name="md-albums" style={{fontSize: 28}} color={tintColor}/>
             )
         })
     },
